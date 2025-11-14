@@ -1,0 +1,135 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.aurasense.fragments.LoginFragment"
+        android:label="LoginFragment" >
+        <action
+            android:id="@+id/action_loginFragment_to_patientListFragment"
+            app:destination="@id/patientListFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/patientListFragment"
+        android:name="com.example.aurasense.fragments.PatientListFragment"
+        android:label="PatientListFragment" >
+        <action
+            android:id="@+id/action_patientListFragment_to_taskListFragment"
+            app:destination="@id/taskListFragment" />
+        <action
+            android:id="@+id/action_patientListFragment_to_addPatientFragment"
+            app:destination="@id/addPatientFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addPatientFragment"
+        android:name="com.example.aurasense.fragments.AddPatientFragment"
+        android:label="AddPatientFragment" />
+    <fragment
+        android:id="@+id/taskListFragment"
+        android:name="com.example.aurasense.ui.tasks.TaskListFragment"
+        android:label="TaskListFragment"
+        tools:layout="@layout/fragment_task_list">
+        <argument
+            android:name="patientId"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null" />
+        <action
+            android:id="@+id/action_taskListFragment_to_addTaskFragment"
+            app:destination="@id/addTaskFragment" />
+        <action
+            android:id="@+id/action_taskListFragment_to_taskDetailsFragment"
+            app:destination="@id/taskDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addTaskFragment"
+        android:name="com.example.aurasense.ui.tasks.AddTaskFragment"
+        android:label="AddTaskFragment" >
+        <argument
+            android:name="patientId"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.aurasense.ui.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_doctorListFragment"
+            app:destination="@id/doctorListFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_emergencyContactListFragment"
+            app:destination="@id/emergencyContactListFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_taskListFragment"
+            app:destination="@id/taskListFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_patientListFragment"
+            app:destination="@id/patientListFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_locationFragment"
+            app:destination="@id/locationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/doctorListFragment"
+        android:name="com.example.aurasense.ui.doctors.DoctorListFragment"
+        android:label="DoctorListFragment"
+        tools:layout="@layout/fragment_doctor_list" >
+        <action
+            android:id="@+id/action_doctorListFragment_to_addDoctorFragment"
+            app:destination="@id/addDoctorFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addDoctorFragment"
+        android:name="com.example.aurasense.ui.doctors.AddDoctorFragment"
+        android:label="AddDoctorFragment"
+        tools:layout="@layout/fragment_add_doctor" />
+    <fragment
+        android:id="@+id/emergencyContactListFragment"
+        android:name="com.example.aurasense.ui.contacts.EmergencyContactListFragment"
+        android:label="EmergencyContactListFragment"
+        tools:layout="@layout/fragment_emergency_contact_list" >
+        <action
+            android:id="@+id/action_emergencyContactListFragment_to_addEmergencyContactFragment"
+            app:destination="@id/addEmergencyContactFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addEmergencyContactFragment"
+        android:name="com.example.aurasense.ui.contacts.AddEmergencyContactFragment"
+        android:label="AddEmergencyContactFragment"
+        tools:layout="@layout/fragment_add_emergency_contact">
+        <argument
+            android:name="contactId"
+            app:argType="long"
+            android:defaultValue="-1L" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.aurasense.ui.ProfileFragment"
+        android:label="ProfileFragment" />
+    <fragment
+        android:id="@+id/locationFragment"
+        android:name="com.example.aurasense.fragments.LocationFragment"
+        android:label="LocationFragment"
+        tools:layout="@layout/fragment_location" />
+    <fragment
+        android:id="@+id/taskDetailsFragment"
+        android:name="com.example.aurasense.ui.tasks.TaskDetailsFragment"
+        android:label="TaskDetailsFragment" >
+        <argument
+            android:name="patientId"
+            app:argType="string" />
+        <argument
+            android:name="taskId"
+            app:argType="string" />
+    </fragment>
+</navigation>

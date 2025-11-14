@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".fragments.LocationFragment">
+
+    <TextView
+        android:id="@+id/latitude_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Latitude:" 
+        android:textSize="18sp"/>
+
+    <TextView
+        android:id="@+id/latitude_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        tools:text="-34.0"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:id="@+id/longitude_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Longitude:"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/longitude_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="151.0"
+        android:textSize="18sp"/>
+
+</LinearLayout>

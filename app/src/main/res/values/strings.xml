@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">AuraSense</string>
+    <string name="title_home">Home</string>
+    <string name="title_doctors">Doctors</string>
+    <string name="title_patients">Patients</string>
+    <string name="title_contacts">Contacts</string>
+    <string name="title_tasks">Tasks</string>
+    <string name="title_location">Location</string>
+</resources>
